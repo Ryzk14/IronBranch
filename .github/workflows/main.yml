@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python }}
-      - name: Install Tox and any other packages
+      - name: Install pytest and any other packages
         run: pip install pytest
-      - name: Run Tox
-        run: pytest -v py
+      - name: Run pytest
+        run: pytest -v
