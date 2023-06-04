@@ -23,6 +23,6 @@ def test_function4(initial_value):
 def test_function5(initial_value):
     assert my_coin.set_function5() + initial_value == 11
 
-@pytest.mark.skip()
+#@pytest.mark.skip()
 def test_function6(initial_value):
     assert my_coin.set_function6() + initial_value == 14
