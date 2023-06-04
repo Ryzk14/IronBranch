@@ -1,3 +1,4 @@
+import pytest
 import test_class
 
 my_coin = test_class.Coin()
