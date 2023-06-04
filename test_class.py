@@ -8,23 +8,19 @@ class Coin:
         self.__six = 6
 
     def set_function1(self):
-         return self.__first + 1
+        return self.__first + 1
 
     def set_function2(self):
-         return self.__second + 2
+        return self.__second + 2
 
     def set_function3(self):
-         return self.__third + 3
+        return self.__third + 3
 
     def set_function4(self):
-         return self.__four + 4
+        return self.__four + 4
 
     def set_function5(self):
-         return self.__five + 5
+        return self.__five + 5
 
     def set_function6(self):
-         return self.__six + 6
-
-
-
-
+        return self.__six + 6
