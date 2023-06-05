@@ -23,8 +23,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          py -m pip install pytest
-          py -m pip install allure-pytest
+          python -m pip install --upgrade pip
+          python -m pip install pytest
+          python -m pip install allure-pytest
         
 
       - name: Run tests and generate Allure report
