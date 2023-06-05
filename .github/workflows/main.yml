@@ -31,6 +31,7 @@ jobs:
       - name: Run tests and generate Allure report
         run: |
           pytest -v tests
+          pip install allure-pytest
           allure generate --clean allure-results -o allure-report
 
       - name: Publish Allure report
