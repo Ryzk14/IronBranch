@@ -33,6 +33,6 @@ jobs:
         run: pytest --alluredir=./allure_results
 
       - name: Genereta Allure Report
-        run: allure generate allure_results
+        run: allure generate allure_results -o docs
 
 
