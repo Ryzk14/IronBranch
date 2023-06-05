@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         python: ["3.11"]
@@ -27,8 +27,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Install allure
         run: |
-          brew update
-          brew install allure
+          sudo apt-get update
+          sudo apt-get install allure
 
       - name: Install dependencies
         run: |
