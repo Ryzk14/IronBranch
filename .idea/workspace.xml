@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb2c6bc1-c296-4032-9d09-b37c00b192a4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pytest_sugar-0.9.7.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pytest_sugar-0.9.7.dist-info/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pytest_sugar-0.9.7.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pytest_sugar-0.9.7.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pytest_sugar-0.9.7.dist-info/REQUESTED" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pytest_sugar-0.9.7.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pytest_sugar-0.9.7.dist-info/entry_points.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pytest_sugar-0.9.7.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pytest_sugar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/1" beforeDir="false" />
-    </list>
+    <list default="true" id="cb2c6bc1-c296-4032-9d09-b37c00b192a4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
