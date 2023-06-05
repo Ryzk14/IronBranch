@@ -30,7 +30,7 @@ jobs:
 
       - name: Run tests and generate Allure report
         run: |
-          pytest
+          pytest -v tests
           allure generate --clean allure-results -o allure-report
 
       - name: Publish Allure report
