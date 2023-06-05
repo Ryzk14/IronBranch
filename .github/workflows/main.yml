@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: Linux-latest
+    runs-on: Ubuntu-latest
     strategy:
       matrix:
         python: ["3.11"]
