@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: MacOS-latest
     strategy:
       matrix:
         python: ["3.11"]
@@ -27,13 +27,14 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install pytest
-          scoop install allure
+	  brew install allure
+	  python -m pip install allure-pytest
 
       - name: Test with pytest
-        run: pytest -v tests    
+        run: pytest --alluredir allure_results    
 
       - name: Save Allure Result
-        run: pytest tests --alluredir=allure_results
+        run: python -m pytest tests --alluredir allure_results
 
       - name: Genereta Allure Report
         run: allure generate allure_results -o allure_report
