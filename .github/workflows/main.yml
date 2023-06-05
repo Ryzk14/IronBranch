@@ -1,25 +1,41 @@
-name: Functional tests 
+name: Run Tests and Generate Allure Report
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python: ["3.11"]
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Python
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python }}
+          python-version: 3.x
+
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install pytest
-      - name: Test with pytest
+        run: pip install -r requirements.txt
+        
+      - name: Run tests and generate Allure report
         run: |
           pytest -v tests
+<<<<<<< HEAD
       
+=======
+          pip install allure-pytest
+          allure generate --clean allure-results -o allure-report
+
+      - name: Publish Allure report
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
+>>>>>>> 3e8cd3d76d9224e20264b70bdb61b69e967597f5
