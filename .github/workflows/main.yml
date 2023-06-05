@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     strategy:
       matrix:
         python: ["3.11"]
@@ -25,9 +25,7 @@ jobs:
 
       - name: Install allure tool
         run: |
-          sudo apt-get install default-jre
-          wget https://github.com/allure-framework/allure2/releases/download/2.18.1/allure_2.18.1-1_all.deb
-          sudo dpkg -i allure_2.22.1-1_all.deb
+          brew install allure
 
       - name: Install dependencies
         run: |
