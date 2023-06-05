@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     strategy:
       matrix:
         python: ["3.11"]
@@ -23,12 +23,10 @@ jobs:
           java-version: '19'
           distribution: 'adopt'
 
-      - name: Check out repository code
-        uses: actions/checkout@v3
-      - name: Install allure
-        run: |
-          sudo apt-get update
-          sudo apt-get install allure
+      - name: Sciip
+        uses: ScoopInstaller/GithubActions@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install dependencies
         run: |
@@ -43,6 +41,6 @@ jobs:
         run: pytest --alluredir=./allure_results
 
       - name: Genereta Allure Report
-        run: allure generate ./allure_results -o allure_report
+        run: allure generate allure_results
 
 
