@@ -28,9 +28,12 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install pytest
           brew install allure
-          
+
+      - name: Test with pytest
+        run: pytest -v tests    
+
       - name: Save Allure Result
-        run: pytest -v tests --alluredir=./allure_results
+        run: pytest --alluredir=./allure_results
 
       - name: Genereta Allure Report
         run: allure generate ./allure_results -o ./allure_reports
