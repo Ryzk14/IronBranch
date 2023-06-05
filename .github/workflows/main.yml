@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: macos-latest
     strategy:
       matrix:
         python: ["3.11"]
@@ -23,10 +23,10 @@ jobs:
           java-version: '19'
           distribution: 'adopt'
 
-      - name: Sciip
-        uses: ScoopInstaller/GithubActions@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Allure
+        run: |
+          brew update
+          brew install allure
 
       - name: Install dependencies
         run: |
