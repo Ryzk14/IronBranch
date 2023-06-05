@@ -26,8 +26,8 @@ jobs:
         
       - name: Run tests and generate Allure report
         run: |
-          pytest -v tests
-          allure generate --clean allure-results -o allure-report
+          pip install allure-pytest
+          allurectl report generate --clean
 
       - name: Publish Allure report
         uses: peaceiris/actions-gh-pages@v3
