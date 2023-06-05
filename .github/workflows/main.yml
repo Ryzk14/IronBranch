@@ -33,9 +33,9 @@ jobs:
         run: pytest -v tests    
 
       - name: Save Allure Result
-        run: pytest --alluredir=./allure_results
+        run: pytest --alluredir=./Users/runner/work/Ryzk14/Ryzk14/allure_results
 
       - name: Genereta Allure Report
-        run: allure generate ./allure_results -o ./allure_reports
+        run: allure generate ./Users/runner/work/Ryzk14/Ryzk14/ -o ./Users/runner/work/Ryzk14/Ryzk14/
 
 
