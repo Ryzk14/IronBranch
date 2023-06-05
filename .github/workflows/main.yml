@@ -27,10 +27,6 @@ jobs:
       - name: Run tests and generate Allure report
         run: |
           pytest -v tests
-<<<<<<< HEAD
-      
-=======
-          pip install allure-pytest
           allure generate --clean allure-results -o allure-report
 
       - name: Publish Allure report
@@ -38,4 +34,3 @@ jobs:
         with:
           personal_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./allure-report
->>>>>>> 3e8cd3d76d9224e20264b70bdb61b69e967597f5
