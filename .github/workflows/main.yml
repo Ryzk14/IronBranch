@@ -23,19 +23,17 @@ jobs:
           java-version: '19'
           distribution: 'adopt'
 
-      - name: Install Scoop
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Install allure
         run: |
-          Set-ExecutionPolicy RemoteSigned -scope CurrentUser
-          Start-Process powershell -Verb RunAs -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command "iex (new-object net.webclient).downloadstring(''https://get.scoop.sh'')"' 
+          brew update
+          brew install allure
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           python -m pip install pytest
-       
-      - name: Build
-        shell: pwsh
-        run: scoop install allure
 
       - name: Test with pytest
         run: pytest -v tests   
