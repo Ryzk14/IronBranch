@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: MacOS-latest
+    runs-on:WinOS-latest
     strategy:
       matrix:
         python: ["3.11"]
@@ -27,7 +27,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install pytest
-          brew install allure
+          scoop install allure
 
       - name: Test with pytest
         run: pytest -v tests    
