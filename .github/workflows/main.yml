@@ -29,6 +29,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install allure
+          sudo apt-get install allure-commandline
 
       - name: Install dependencies
         run: |
@@ -39,9 +40,9 @@ jobs:
         run: pytest -v tests   
 
       - name: Save Allure Result
-        run: pytest --alluredir=allure_results
+        run: pytest --alluredir=./allure_results
 
       - name: Genereta Allure Report
-        run: allure generate allure_results -o allure_report
+        run: allure generate ./allure_results -o allure_report
 
 
