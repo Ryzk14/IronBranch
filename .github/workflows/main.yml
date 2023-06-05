@@ -29,7 +29,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install allure
-          sudo apt-get install allure-commandline
 
       - name: Install dependencies
         run: |
