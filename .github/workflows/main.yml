@@ -27,7 +27,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install pytest
-	  brew install allure
+          python -m pip install allure-pytest
 
       - name: Test with pytest
         run: pytest --alluredir allure_results    
