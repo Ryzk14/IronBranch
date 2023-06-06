@@ -59,6 +59,7 @@ jobs:
         run: allure generate allure_results -o docs
       
   job2:
+    needs: job1
     name: Job 2
     runs-on: ubuntu-latest
     steps:
