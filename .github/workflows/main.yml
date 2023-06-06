@@ -26,6 +26,9 @@ jobs:
           python -m pip install pytest
           python -m pip install allure-pytest
 
+      - name: Test with pytest
+        run: pytest tests 
+
       - name: Clean docs
         run: rm docs  
 
