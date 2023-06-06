@@ -30,7 +30,7 @@ jobs:
         run: pytest tests 
 
       - name: Clean docs
-        run: rm docs  
+        run: rm -r docs  
 
       - name: Save Allure Result
         run: pytest tests --alluredir=allure_results
