@@ -24,12 +24,9 @@ concurrency:
 jobs:
 
   job1:
-    name: Job 1
+    name: Build report
     runs-on: ubuntu-latest
     steps:
-    
-      - name: Checkout code
-        uses: actions/checkout@v2
         
       - name: Setup Python
         uses: actions/setup-python@v2
@@ -39,8 +36,7 @@ jobs:
       - name: Install allure tool
         run: |
           npm install -g allure-commandline --save-dev
-          sudo apt-get install allure
-        
+              
         
       - name: Install dependencies 
         run: |
@@ -62,17 +58,15 @@ jobs:
         with:
           source: ./docs
           destination: ./_site
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         
   job2:
-   name: Job 2
+   name: Test runs
    runs-on: ubuntu-latest
    steps:
     
-      - name: Checkout code
-        uses: actions/checkout@v2
-        
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
@@ -89,8 +83,8 @@ jobs:
 
   
 
-  # Deployment job
-  deploy:
+
+  Allure_Report:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
