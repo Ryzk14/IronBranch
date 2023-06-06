@@ -33,9 +33,7 @@ jobs:
 
       - name: Install allure tool
         run: |
-          sudo apt-add-repository ppa:yandex-qatools/allure-framework
-          sudo apt-get update
-          sudo apt-get install allure-commandline
+          npm install -g allure-commandline --save-dev
           sudo apt-get install allure
         
         
