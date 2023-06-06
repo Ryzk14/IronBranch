@@ -33,7 +33,7 @@ jobs:
         run: rm -rf docs  
 
       - name: Save Allure Result
-        run: pytest tests --alluredir=./allure_results
+        run: pytest tests --alluredir=allure_results
 
       - name: Genereta Allure Report
         run: allure generate allure_results -o docs
