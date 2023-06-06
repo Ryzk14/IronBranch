@@ -34,13 +34,14 @@ jobs:
       - name: Install allure tool
         run: |
           sudo apt-get install allure
+          sudo apt-get install allure-commandline
         
       - name: Install dependencies 
         run: |
           python -m pip install --upgrade pip
           python -m pip install pytest
           python -m pip install allure-pytest
-          sudo apt-get install allure-commandline
+          
           
       - name: Clean docs
         run: rm -r docs
