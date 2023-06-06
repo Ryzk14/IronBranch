@@ -81,7 +81,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         
       - name: check doc file
-        run: ls -a
+        run: ls docs
 
   # Deployment job
   deploy:
