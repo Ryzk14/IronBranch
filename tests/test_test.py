@@ -26,3 +26,6 @@ def test_function5(initial_value):
 #@pytest.mark.skip()
 def test_function6(initial_value):
     assert my_coin.set_function6() + initial_value == 13
+
+def test_function7(initial_value):
+    assert my_coin.set_function6() + initial_value == 13
