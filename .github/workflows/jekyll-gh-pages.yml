@@ -40,6 +40,7 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install pytest
           python -m pip install allure-pytest
+          sudo apt-get install allure-commandline
           
       - name: Clean docs
         run: rm -r docs
