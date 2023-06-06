@@ -53,7 +53,7 @@ jobs:
       - name: Genereta Allure Report
         run: allure generate allure_results -o docs
         
-      - name: check doc file
+      - name: check doc file1
         run: ls docs
         
       - name: Checkout
@@ -63,11 +63,13 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./docs
+          source: docs
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         
+      - name: check doc file2
+        run: ls docs
       
 
   # Deployment job
