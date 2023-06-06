@@ -27,6 +27,9 @@ jobs:
     name: Build report
     runs-on: ubuntu-latest
     steps:
+     
+      - name: Checkout code
+        uses: actions/checkout@v2
         
       - name: Setup Python
         uses: actions/setup-python@v2
@@ -66,7 +69,10 @@ jobs:
    name: Test runs
    runs-on: ubuntu-latest
    steps:
-    
+   
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
