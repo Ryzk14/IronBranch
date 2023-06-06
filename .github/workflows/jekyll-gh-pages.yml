@@ -49,10 +49,7 @@ jobs:
           
       - name: Create Docs
         run: sudo mkdir docs
-        
-      - name: Create allure_results
-        run: sudo mkdir allure_results
-          
+                  
       - name: Save Allure Result
         run: pytest tests --alluredir=allure_results
        
