@@ -1,0 +1,10 @@
+[{
+  "name": "GitHub Actions",
+  "type": "github actions",
+  "url": "http://example.org",
+  "buildOrder": 13,
+  "buildName": "Link",
+  "buildUrl": "https://ryzk14.github.io/Ryzk14/",
+  "reportUrl": "http://example.org/build#13/AllureReport",
+  "reportName": "Demo allure report"
+}]
