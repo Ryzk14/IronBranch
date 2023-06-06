@@ -48,10 +48,10 @@ jobs:
         run: rm -r docs
           
       - name: Save Allure Result
-        run: pytest tests --alluredir=allure_results
+        run: pytest tests --alluredir=Ryzk14
        
       - name: Genereta Allure Report
-        run: allure generate allure_results -o docs
+        run: allure generate Ryzk14
         
       - name: check doc file1
         run: ls docs
@@ -63,7 +63,7 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: docs
+          source: ./
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
