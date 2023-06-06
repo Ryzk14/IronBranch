@@ -37,5 +37,8 @@ jobs:
 
       - name: Genereta Allure Report
         run: allure generate allure_results -o docs
+     
+      - name: Check docs
+        run: ls docs
 
 
