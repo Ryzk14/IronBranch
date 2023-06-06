@@ -25,16 +25,14 @@ jobs:
   job1:
     name: Job 1
     runs-on: macos-latest
-    strategy:
-      matrix:
-        python: ["3.11"]
+
 
     steps:
       - uses: actions/checkout@v2
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
-         python-version: ${{ matrix.python }}
+         python-version: 3.11
           
 
       - name: Checkout code
