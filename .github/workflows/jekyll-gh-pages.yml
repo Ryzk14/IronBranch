@@ -52,10 +52,7 @@ jobs:
        
       - name: Genereta Allure Report
         run: allure generate Ryzk14
-        
-      - name: check doc file1
-        run: ls docs
-        
+ 
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Pages
@@ -67,9 +64,7 @@ jobs:
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
-        
-      - name: check doc file2
-        run: ls docs
+      
       
 
   # Deployment job
