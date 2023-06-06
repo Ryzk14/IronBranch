@@ -55,6 +55,12 @@ jobs:
        
       - name: Genereta Allure Report
         run: allure generate allure_results -o docs
+        
+      - name: Genereta Allure Report
+        run: |
+          cd docs/widgets
+          > filename executors.json
+          echo '[{"name": "GitHub Actions", "type": "github actions", "url": "http://example.org", "buildOrder": 13, "buildName": "allure-report_deploy#13", "buildUrl": "http://example.org/build#13", "reportUrl": "http://example.org/build#13/AllureReport", "reportName": "Demo allure report"}]' >> executors.json
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
