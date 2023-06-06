@@ -59,7 +59,7 @@ jobs:
       - name: Genereta Allure Report
         run: |
           truncate -s 0 docs/widgets/executors.json
-          echo '[{"name": "GitHub Actions", "type": "github actions", "url": "http://example.org", "buildOrder": 13, "buildName": "allure-report_deploy#13", "buildUrl": "http://example.org/build#13", "reportUrl": "http://example.org/build#13/AllureReport", "reportName": "Demo allure report"}]' >> docs/widgets/executors.json
+          echo '[{"name": "GitHub Actions", "type": "github actions", "buildOrder": 13, "buildName": "allure-report_deploy#13", "buildUrl": "http://example.org/build#13", "reportUrl": "http://example.org/build#13/AllureReport"}]' >> docs/widgets/executors.json
           cat docs/widgets/executors.json
           
       - name: Build with Jekyll
