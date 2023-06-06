@@ -40,6 +40,9 @@ jobs:
           python -m pip install pytest
           python -m pip install allure-pytest
           
+      - name: pytest
+        run: pytest -v tests
+          
       - name: Save Allure Result
         run: pytest tests --alluredir=allure_results
        
