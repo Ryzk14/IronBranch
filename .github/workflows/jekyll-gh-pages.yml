@@ -54,7 +54,7 @@ jobs:
         run: allure generate allure_results -o docs
         
       - name: Genereta Allure Report
-        run: cp -r docs/. /Ryzk14
+        run: sudo cp -r docs/. /
         
         
  
