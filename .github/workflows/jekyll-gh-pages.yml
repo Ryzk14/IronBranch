@@ -47,8 +47,11 @@ jobs:
           python -m pip install pytest
           python -m pip install allure-pytest
           
-      - name: Clean docs
-        run: rm -r docs
+      - name: Create Docs
+        run: sudo mkdir docs
+        
+      - name: Create allure_results
+        run: sudo mkdir allure_results
           
       - name: Save Allure Result
         run: pytest tests --alluredir=allure_results
