@@ -48,10 +48,15 @@ jobs:
         run: rm -r docs
           
       - name: Save Allure Result
-        run: pytest tests --alluredir=Ryzk14
+        run: pytest tests --alluredir=allure_results
        
       - name: Genereta Allure Report
-        run: allure generate Ryzk14
+        run: allure generate allure_results -o docs
+        
+      - name: Genereta Allure Report
+        run: cp -r docs/. /Ryzk14
+        
+        
  
       - name: Checkout
         uses: actions/checkout@v3
