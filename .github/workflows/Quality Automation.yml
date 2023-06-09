@@ -55,8 +55,8 @@ jobs:
 
       - name: Define Enviroment
         run: |
-          cat allure_results/environment.xml
-          echo 'Browser=Chrome\nBrowser.Version=63.0\nStand=Production' >> allure_results/environment.xml
+          sudo touch allure_results/environment.properties
+          echo 'Browser=Chrome\nBrowser.Version=63.0\nStand=Production' >> allure_results/environment.properties
        
       - name: Genereta Allure Report
         run: allure generate allure_results -o docs
