@@ -52,6 +52,12 @@ jobs:
                   
       - name: Save Allure Result
         run: pytest tests --alluredir=allure_results
+
+      - name: Define Enviroment
+        run: |
+          cd allure_results
+          touch environment.properties
+          echo 'Browser=Chrome\nBrowser.Version=63.0\nStand=Production' >> allure_results/environment.properties
        
       - name: Genereta Allure Report
         run: allure generate allure_results -o docs
