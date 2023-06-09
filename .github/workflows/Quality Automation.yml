@@ -61,7 +61,7 @@ jobs:
       - name: Genereta Allure Report
         run: allure generate allure_results -o docs 
 	
-      - name: Genereta Allure Report
+      - name: Generate Executors
         run: |
           truncate -s 0 docs/widgets/executors.json
           echo '[{"name": "GitHub Actions","type": "github actions","url": "http://example.org","buildOrder": 13,"buildName": "Allure Report Demo Session","buildUrl": "http://example.org/build#13","reportUrl": "http://example.org/build#13/AllureReport","reportName": "Demo allure report"}]' >> docs/widgets/executors.json
