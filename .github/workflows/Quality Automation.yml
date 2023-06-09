@@ -53,16 +53,27 @@ jobs:
       - name: Save Allure Result
         run: pytest tests --alluredir=allure_results
 
-      - name: Define Enviroment and Executor
+      - name: Define Enviroment 
         run: |
            sudo touch allure_results/environment.properties
            echo -e 'Browser=Chrome\nBrowser.Version=114.0\nStand=Localhost' | sudo tee -a allure_results/environment.properties
-
-      - name: Define Enviroment and Executor
-        run: |
-	    sudo touch allure_results/executor.json
-            echo -e '{\n  "name": "GitHub Actions",\n  "type": "github actions",\n  "url": "http://example.org",\n  "buildOrder": 13,\n  "buildName": "Allure Report Test Demo",\n  "buildUrl": "http://example.org/build#13",\n  "reportUrl": "http://example.org/build#13/AllureReport",\n  "reportName": "Demo allure report"\n}' | sudo tee -a allure_results/executor.json
-     
+	   
+      - name: Create executor file
+        run: sudo touch allure_results/executor.json
+	
+      - name: Add value to the executor file
+        run: sudo touch allure_results/executor.json
+           echo -e '{
+  		      "name": "GitHub Actions",
+  		      "type": "github actions",
+  		      "url": "http://example.org",
+  		      "buildOrder": 13,
+  		      "buildName": "allure-report_deploy#13",
+  		      "buildUrl": "http://example.org/build#13",
+  		      "reportUrl": "http://example.org/build#13/AllureReport",
+  		      "reportName": "Demo allure report"
+		}' | sudo tee -a allure_results/executor.json
+	   
       - name: Genereta Allure Report
         run: allure generate allure_results -o docs   
           
