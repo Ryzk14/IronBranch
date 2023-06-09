@@ -62,13 +62,11 @@ jobs:
         
       - name: Genereta Allure Report
         run: |
-          truncate -s 0 docs/widgets/executors.json
-          echo '[{
+          sudo touch allure_results/executor.json
+          echo '{
             "name": "Jenkins",
-            "type": "jenkins",
-           }]' >> docs/widgets/executors.json
-          ls docs/widgets/executors.json
-          cat docs/widgets/executors.json
+            "type": "jenkins"
+           }' >> allure_results/executor.json
           
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
