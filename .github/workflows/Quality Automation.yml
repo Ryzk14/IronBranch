@@ -57,8 +57,6 @@ jobs:
         run: |
           sudo touch allure_results/environment.properties
           echo -e 'Browser=Chrome\nBrowser.Version=63.0\nStand=Production' | sudo tee allure_results/environment.properties
-	 
-	  
 	  
       - name: Genereta Allure Report
         run: allure generate allure_results -o docs
