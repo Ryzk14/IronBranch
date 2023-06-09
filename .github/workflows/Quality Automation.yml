@@ -60,8 +60,8 @@ jobs:
 
       - name: Define Enviroment and Executor
         run: |
-	   sudo touch allure_results/executor.json
-           echo -e '{\n  "name": "GitHub Actions",\n  "type": "github actions",\n  "url": "http://example.org",\n  "buildOrder": 13,\n  "buildName": "Allure Report Test Demo",\n  "buildUrl": "http://example.org/build#13",\n  "reportUrl": "http://example.org/build#13/AllureReport",\n  "reportName": "Demo allure report"\n}' | sudo tee -a allure_results/executor.json
+	    sudo touch allure_results/executor.json
+            echo -e '{\n  "name": "GitHub Actions",\n  "type": "github actions",\n  "url": "http://example.org",\n  "buildOrder": 13,\n  "buildName": "Allure Report Test Demo",\n  "buildUrl": "http://example.org/build#13",\n  "reportUrl": "http://example.org/build#13/AllureReport",\n  "reportName": "Demo allure report"\n}' | sudo tee -a allure_results/executor.json
      
       - name: Genereta Allure Report
         run: allure generate allure_results -o docs   
