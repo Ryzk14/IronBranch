@@ -65,7 +65,7 @@ jobs:
       - name: Generate Executors
         run: |
           truncate -s 0 docs/widgets/executors.json
-          echo '[{"name": "GitHub Actions","type": "github actions","url": "http://example.org","buildOrder": 13,"buildName": "Allure Report Demo Session","buildUrl": "http://example.org/build#13","reportUrl": "http://example.org/build#13/AllureReport","reportName": "Demo allure report"}]' >> docs/widgets/executors.json
+          echo '[{"name": "GitHub Actions","type": "github actions","url": "http://example.org","buildOrder": 13,"buildName": "Constnatine","buildUrl": "http://example.org/build#13","reportUrl": "http://example.org/build#13/AllureReport","reportName": "Demo allure report"}]' >> docs/widgets/executors.json
           cat docs/widgets/executors.json
           
       - name: Build with Jekyll
