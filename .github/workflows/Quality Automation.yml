@@ -56,7 +56,7 @@ jobs:
       - name: Define Enviroment
         run: |
            sudo touch allure_results/environment.properties
-           echo -e 'Browser=Chrome\nBrowser.Version=63.0\nStand=Production' | sudo tee -a allure_results/environment.properties
+           echo -e 'Browser=Chrome\nBrowser.Version=114.0\nEnviroment=localhost' | sudo tee -a allure_results/environment.properties
       - name: Genereta Allure Report
         run: allure generate allure_results -o docs
         
