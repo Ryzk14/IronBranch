@@ -63,16 +63,7 @@ jobs:
       - name: Genereta Allure Report
         run: |
           sudo touch allure_results/executor.json
-          echo '{
-            "name": "Jenkins",
-            "type": "jenkins",
-            "url": "http://example.org",
-            "buildOrder": 13,
-            "buildName": "allure-report_deploy#13",
-            "buildUrl": "http://example.org/build#13",
-            "reportUrl": "http://example.org/build#13/AllureReport",
-            "reportName": "Demo allure report"
-           }' | sudo tee -a allure_results/executor.json
+          echo '{"name": "Jenkins", "type": "jenkins"}' | sudo tee -a allure_results/executor.json
           
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
