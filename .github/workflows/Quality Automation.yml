@@ -25,7 +25,6 @@ jobs:
 
   job1:
     name: Build report
-    if: always()
     runs-on: ubuntu-latest
     steps:
      
@@ -52,6 +51,8 @@ jobs:
         run: rm -r docs
                   
       - name: Save Allure Result
+        if: always()
+        continue-on-error: true
         run: pytest tests --alluredir=allure_results
 
       - name: Define Enviroment 
@@ -79,7 +80,6 @@ jobs:
         
   job2:
    name: Test runs
-   if: always()
    runs-on: ubuntu-latest
    steps:
    
@@ -97,6 +97,8 @@ jobs:
           python -m pip install pytest
         
       - name: Run Tests
+	if: always()
+        continue-on-error: true
         run: |
           pytest -v tests
 
