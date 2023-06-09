@@ -55,8 +55,7 @@ jobs:
 
       - name: Define Enviroment
         run: |
-          cd allure_results
-          touch environment.properties
+          cat allure_results/environment.properties
           echo 'Browser=Chrome\nBrowser.Version=63.0\nStand=Production' >> allure_results/environment.properties
        
       - name: Genereta Allure Report
