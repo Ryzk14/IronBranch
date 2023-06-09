@@ -58,24 +58,14 @@ jobs:
            sudo touch allure_results/environment.properties
            echo -e 'Browser=Chrome\nBrowser.Version=114.0\nStand=Localhost' | sudo tee -a allure_results/environment.properties
 	   
-      - name: Create executor file
-        run: sudo touch allure_results/executor.json
-	
-      - name: Add value to the executor file
-        run: sudo touch allure_results/executor.json
-           echo -e '{
-  		      "name": "GitHub Actions",
-  		      "type": "github actions",
-  		      "url": "http://example.org",
-  		      "buildOrder": 13,
-  		      "buildName": "allure-report_deploy#13",
-  		      "buildUrl": "http://example.org/build#13",
-  		      "reportUrl": "http://example.org/build#13/AllureReport",
-  		      "reportName": "Demo allure report"
-		}' | sudo tee -a allure_results/executor.json
-	   
       - name: Genereta Allure Report
-        run: allure generate allure_results -o docs   
+        run: allure generate allure_results -o docs  
+	
+      - name: Genereta Allure Report
+        run: |
+          truncate -s 0 docs/widgets/executors.json
+          echo '[{"name": "GitHub Actions","type": "github actions","url": "http://example.org","buildOrder": 13,"buildName": "Allure Report Demo Session","buildUrl": "http://example.org/build#13","reportUrl": "http://example.org/build#13/AllureReport","reportName": "Demo allure report"}]' >> docs/widgets/executors.json
+          cat docs/widgets/executors.json
           
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
