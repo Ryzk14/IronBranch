@@ -51,14 +51,17 @@ jobs:
         run: rm -r docs
                   
       - name: Save Allure Result
+        if: always()
         run: pytest tests --alluredir=allure_results
 
       - name: Define Enviroment 
         run: |
           sudo touch allure_results/environment.properties
           echo -e 'Browser=Chrome\nBrowser.Version=114.0\nStand=Localhost' | sudo tee -a allure_results/environment.properties
+          
       - name: Genereta Allure Report
         run: allure generate allure_results -o docs 
+        
       - name: Generate Executors
         run: |
           truncate -s 0 docs/widgets/executors.json
