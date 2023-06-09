@@ -73,6 +73,7 @@ jobs:
             "reportUrl": "http://example.org/build#13/AllureReport",
             "reportName": "Demo allure report"
            }]' >> docs/widgets/executors.json
+          ls docs/widgets/executors.json
           cat docs/widgets/executors.json
           
       - name: Build with Jekyll
