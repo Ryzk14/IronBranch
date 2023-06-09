@@ -93,6 +93,7 @@ jobs:
           python -m pip install pytest
         
       - name: Run Tests
+        if: always()
         run: |
           pytest -v tests
 
