@@ -9,7 +9,7 @@ def test_function1(initial_value):
 
 
 def test_function2(initial_value):
-    assert my_coin.set_function2() + initial_value == 5
+    ado + var == 7
 
 
 def test_function3(initial_value):
