@@ -68,15 +68,6 @@ jobs:
           echo '[{"name": "GitHub Actions","type": "github actions","url": "http://example.org","buildOrder": 13,"buildName": "Demo Session","buildUrl": "http://example.org/build#13","reportUrl": "http://example.org/build#13/AllureReport","reportName": "Demo allure report"}]' >> docs/widgets/executors.json
           cat docs/widgets/executors.json
 
-      - name: Push
-      - run: |
-                  git config user.name Ryzk14
-                  git config user.email Ryzhko14@gmail.com
-                  git pull
-                  git add .
-                  git commit -m "generated"
-                  git push
-          
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
@@ -150,7 +141,7 @@ jobs:
                   ls ./allure_results/history/
                   
 
-        - uses: actions/checkout@v3
+        - name: 123
         - run: |
                   git config user.name Ryzk14
                   git config user.email Ryzhko14@gmail.com
