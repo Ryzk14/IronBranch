@@ -103,58 +103,49 @@ jobs:
       name: Save Allure Runs History
       runs-on: ubuntu-latest
       steps:
-#        - name: Setup Python
-#          uses: actions/setup-python@v2
-#          with:
-#            python-version: 3.11
-#
-#        - name: Install allure tool
-#          run: |
-#            npm install -g allure-commandline --save-dev
-#
-#        - name: Install dependencies
-#          run: |
-#            python -m pip install --upgrade pip
-#            python -m pip install pytest
-#            python -m pip install allure-pytest
-#
-##        - name: Clean docs
-##          run: rm -r docs
-#
-#        - name: Save Allure Result
-#          continue-on-error: true
-#          run: pytest tests --alluredir=allure_results
-#
-#        - name: Define Environment
-#          run: |
-#            sudo touch allure_results/environment.properties
-#            echo -e 'Browser=Chrome\nBrowser.Version=114.0\nStand=Localhost' | sudo tee -a allure_results/environment.properties
-#
-#        - name: Generate Allure Report
-#          run: allure generate allure_results -o docs
-#
-#        - name: Copy History
-#          run: |
-#                  mkdir -p ./allure_results/history
-#                  ls ./allure_results
-#                  cp -r ./docs/history/* ./allure_results/history/
-#                  ls ./allure_results/history/
-                  
 
-        - name: checks
-        - run: |
-                  npm install -g allure-commandline --save-dev
-                  python -m pip install --upgrade pip
-                  python -m pip install pytest
-                  python -m pip install allure-pytest
-                  pytest tests --alluredir=allure_results
-                  sudo touch allure_results/environment.properties
-                  echo -e 'Browser=Chrome\nBrowser.Version=114.0\nStand=Localhost' | sudo tee -a allure_results/environment.properties
-                  allure generate allure_results -o docs
+        - name: Checkout code
+          uses: actions/checkout@v2
+
+        - name: Setup Python
+          uses: actions/setup-python@v2
+          with:
+            python-version: 3.11
+
+        - name: Install allure tool
+          run: |
+            npm install -g allure-commandline --save-dev
+
+        - name: Install dependencies
+          run: |
+            python -m pip install --upgrade pip
+            python -m pip install pytest
+            python -m pip install allure-pytest
+
+#        - name: Clean docs
+#          run: rm -r docs
+
+        - name: Save Allure Result
+          continue-on-error: true
+          run: pytest tests --alluredir=allure_results
+
+        - name: Define Environment
+          run: |
+            sudo touch allure_results/environment.properties
+            echo -e 'Browser=Chrome\nBrowser.Version=114.0\nStand=Localhost' | sudo tee -a allure_results/environment.properties
+
+        - name: Generate Allure Report
+          run: allure generate allure_results -o docs
+
+        - name: Copy History
+          run: |
                   mkdir -p ./allure_results/history
                   ls ./allure_results
                   cp -r ./docs/history/* ./allure_results/history/
                   ls ./allure_results/history/
+
+        - name: push
+        - run: |
                   git config user.name Ryzk14
                   git config user.email Ryzhko14@gmail.com
                   git pull
