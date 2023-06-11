@@ -144,14 +144,14 @@ jobs:
                   cp -r ./docs/history/* ./allure_results/history/
                   ls ./allure_results/history/
 
-#        - name: push
-#        - run: |
-#                  git config user.name Ryzk14
-#                  git config user.email Ryzhko14@gmail.com
-#                  git pull
-#                  git add .
-#                  git commit -m "generated"
-#                  git push
+        - name: push
+        - run: |
+                  git config user.name Ryzk14
+                  git config user.email Ryzhko14@gmail.com
+                  git pull
+                  git add .
+                  git commit -m "generated"
+                  git push
 #      - name: Checkout code
 #        uses: actions/checkout@v3
 #        with:
