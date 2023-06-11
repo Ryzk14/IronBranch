@@ -103,12 +103,19 @@ jobs:
       name: Save Allure Runs History
       runs-on: ubuntu-latest
       steps:
-
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-            repository: Ryzk14/IronBranch
-            path: allure_results/History
+        - uses: actions/checkout@v3
+        - run: |
+                  allure_results > history
+                  git config user.name Ryzk14
+                  git config user.email Ryzhko14@gmail.com
+                  git add .
+                  git commit -m "generated"
+                  git push
+#      - name: Checkout code
+#        uses: actions/checkout@v3
+#        with:
+#            repository: Ryzk14/IronBranch
+#            path: allure_results/History
 
   Allure_Report:
     environment:
