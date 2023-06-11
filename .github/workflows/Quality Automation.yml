@@ -108,10 +108,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Clone History Source
-        uses: git clone https://github.com/Ryzk14/IronBranch
-
-  
-
+        uses: |
+          sudo apt install git
+          git --version  
+          git clone https://gitlab.com/Ryzk14/IronBranch/docs/history
 
   Allure_Report:
     environment:
