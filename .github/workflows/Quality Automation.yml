@@ -130,7 +130,7 @@ jobs:
 
         - name: Copy History
           run: |
-                  cp -R ./docs/history ./docs/allure_results/history
+                  cp -R ./docs/history/ ./docs/allure_results/
                   ls ./docs/allure_results/history
 
         - uses: actions/checkout@v3
