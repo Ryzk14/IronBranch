@@ -24,7 +24,7 @@ concurrency:
 jobs:
 
   job1:
-    name: Build report
+    name: Setups Report
     runs-on: ubuntu-latest
     steps:
      
@@ -78,7 +78,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         
   job2:
-   name: Test runs
+   name: Pytest Run Test
    runs-on: ubuntu-latest
    steps:
    
@@ -99,6 +99,17 @@ jobs:
         continue-on-error: true
         run: |
           pytest -v tests
+  job3:
+      name: Save Allure Runs History
+      runs-on: ubuntu-latest
+      steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Clone History Source
+        uses: |
+          git clone https://github.com/Ryzk14/IronBranch
 
   
 
