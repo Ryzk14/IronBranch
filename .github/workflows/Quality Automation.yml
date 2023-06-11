@@ -103,6 +103,9 @@ jobs:
       name: Save Allure Runs History
       runs-on: ubuntu-latest
       steps:
+        - name: Install allure tool
+          run: |
+            npm install -g allure-commandline --save-dev
 
         - name: Install dependencies
           run: |
