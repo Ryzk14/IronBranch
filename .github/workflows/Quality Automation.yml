@@ -131,12 +131,12 @@ jobs:
         - name: Copy History
           run: |
                   cp -R ./docs/history ./docs/allure_results
+                  ls ./docs/allure_results
 
         - uses: actions/checkout@v3
         - run: |
                   git config user.name Ryzk14
                   git config user.email Ryzhko14@gmail.com
-                  git pull
                   git add .
                   git commit -m "generated"
                   git push
