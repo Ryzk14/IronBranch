@@ -130,8 +130,8 @@ jobs:
 
         - name: Copy History
           run: |
-                  mkdir /allure_results/history
-                  ls /docs/allure_results
+                  mkdir ./allure_results/history
+                  ls ./docs
                   cp -R ./docs/history/ ./docs/allure_results/history
                   
 
