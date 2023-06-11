@@ -103,7 +103,6 @@ jobs:
       name: Save Allure Runs History
       runs-on: ubuntu-latest
       steps:
-        -
         - name: Setup Python
           uses: actions/setup-python@v2
           with:
