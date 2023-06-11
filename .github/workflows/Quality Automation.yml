@@ -110,8 +110,8 @@ jobs:
             python -m pip install pytest
             python -m pip install allure-pytest
 
-        - name: Clean docs
-          run: rm -r docs
+#        - name: Clean docs
+#          run: rm -r docs
 
         - name: Save Allure Result
           continue-on-error: true
