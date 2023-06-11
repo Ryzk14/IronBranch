@@ -132,7 +132,7 @@ jobs:
           run: |
                   mkdir ./allure_results/history
                   ls ./allure_results
-                  cp -R ./docs/history/ ./docs/allure_results/history
+                  cp -r ./docs/history/* ./docs/allure_results/history/
                   
 
         - uses: actions/checkout@v3
