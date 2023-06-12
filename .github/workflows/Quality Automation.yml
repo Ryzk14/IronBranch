@@ -147,7 +147,7 @@ jobs:
         - name: Set up Git
           run: |
               git config --local user.email Ryzhko14@gmail.com
-              git config --local user.name "Ryzk14
+              git config --local user.name Ryzk14
 
         - name: Commit and Push
           run: |
