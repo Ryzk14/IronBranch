@@ -129,13 +129,11 @@ jobs:
           continue-on-error: true
           run: pytest tests --alluredir=allure_results
 
-        - name: Define Environment
-          run: |
-            sudo touch allure_results/environment.properties
-            echo -e 'Browser=Chrome\nBrowser.Version=114.0\nStand=Localhost' | sudo tee -a allure_results/environment.properties
-
         - name: Generate Allure Report
           run: allure generate allure_results -o docs
+
+        - name: Clean allure_results
+          run: rm -r allure_results
 
         - name: Copy History
           run: |
@@ -143,6 +141,9 @@ jobs:
                   ls ./allure_results
                   cp -r ./docs/history/* ./allure_results/history/
                   ls ./allure_results/history/
+
+        - name: Clean docs
+          run: rm -r docs
 
         - name: Set up Git
           run: |
