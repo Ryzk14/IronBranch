@@ -134,23 +134,21 @@ jobs:
         - name: Generate Allure Report
           run: allure generate allure_results -o docs
 
-#        - name: Clean allure_results
-#          run: rm -r allure_results
+        - name: Clean allure_results
+          run: rm -r allure_results
 
         - name: Copy History
           run: |
-                  mkdir -p ./allure_results/history
-                  ls ./allure_results
-                  cp -r ./docs/history/* ./allure_results/history/
-                  ls ./allure_results/history/
+                mkdir -p ./allure_results/history
+                cp -r ./docs/history/* ./allure_results/history/
 
 #        - name: Clean docs
 #          run: rm -r docs
 
         - name: Set up Git
           run: |
-              git config --local user.email Ryzhko14@gmail.com
-              git config --local user.name Ryzk14
+               git config --local user.email Ryzhko14@gmail.com
+               git config --local user.name Ryzk14
 
         - name: Commit and Push
           run: |
