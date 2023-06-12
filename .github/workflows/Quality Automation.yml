@@ -142,9 +142,6 @@ jobs:
                 mkdir -p ./allure_results/history
                 cp -r ./docs/history/* ./allure_results/history/
 
-#        - name: Clean docs
-#          run: rm -r docs
-
         - name: Set up Git
           run: |
                git config --local user.email Ryzhko14@gmail.com
