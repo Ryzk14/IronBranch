@@ -132,8 +132,8 @@ jobs:
         - name: Generate Allure Report
           run: allure generate allure_results -o docs
 
-        - name: Clean allure_results
-          run: rm -r allure_results
+#        - name: Clean allure_results
+#          run: rm -r allure_results
 
         - name: Copy History
           run: |
@@ -142,8 +142,8 @@ jobs:
                   cp -r ./docs/history/* ./allure_results/history/
                   ls ./allure_results/history/
 
-        - name: Clean docs
-          run: rm -r docs
+#        - name: Clean docs
+#          run: rm -r docs
 
         - name: Set up Git
           run: |
@@ -152,7 +152,7 @@ jobs:
 
         - name: Commit and Push
           run: |
-               git add .
+               git add ./allure_results/history/
                git commit -m "Automated commit by GitHub Actions"
                git push
 
