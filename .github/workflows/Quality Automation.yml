@@ -99,9 +99,10 @@ jobs:
         continue-on-error: true
         run: |
           pytest -v tests
-  job4:
+  job3:
       name: Save Allure Runs History
       runs-on: ubuntu-latest
+      needs: job1
       permissions:
         contents: write
       steps:
