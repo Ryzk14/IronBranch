@@ -165,7 +165,6 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: 20
-          distribution: jdk
 
       - name: setup jmeter
         run: |
