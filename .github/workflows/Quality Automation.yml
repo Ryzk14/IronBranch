@@ -153,6 +153,28 @@ jobs:
                git add ./allure_results/history/
                git commit -m "Automated commit by GitHub Actions"
                git push
+  job4:
+    name: Setup Jmeter Load Script
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: setup jmeter
+        run: |
+          ./Jmeter/apache-jmeter-5.5/bin
+          jmeter -n -t "./Jmeter/main.jmx" -l "./Jmeter/report/report.csv"
+          jmeter -g "./Jmeter/report/report.csv" -o "./Jmeter/html"
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./Jmeter/html
+          destination: ./_site
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
 
   Allure_Report:
     environment:
