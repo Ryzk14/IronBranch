@@ -163,7 +163,7 @@ jobs:
 
       - name: setup jmeter
         run: |
-          ./Jmeter/apache-jmeter-5.5/bin
+          ./apache-jmeter-5.5/bin
           jmeter -n -t "./Jmeter/main.jmx" -l "./Jmeter/report/report.csv"
           jmeter -g "./Jmeter/report/report.csv" -o "./Jmeter/html"
 
