@@ -167,9 +167,8 @@ jobs:
         run: |
           cd ./apache-jmeter-5.5
           cd bin
-          chmod +x jmeter.sh
-          ./jmeter.sh -n -t "apache-jmeter-5.5/jmx/main.jmx" -l "jmeter-report/report.csv"
-          ./jmeter.sh -g "jmeter-report/report.csv" -o "jmeter-html"
+          cat ./jmeter.sh -n -t "apache-jmeter-5.5/jmx/main.jmx" -l "jmeter-report/report.csv"
+          cat ./jmeter.sh -g "jmeter-report/report.csv" -o "jmeter-html"
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
