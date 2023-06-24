@@ -155,7 +155,7 @@ jobs:
 #               git push
   job4:
     name: Setup Jmeter Load Script
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     steps:
 
       - name: Checkout code
@@ -167,8 +167,8 @@ jobs:
         run: |
           cd ./apache-jmeter-5.5
           cd bin
-          sudo touch jmeter -n -t "apache-jmeter-5.5/jmx/main.jmx" -l "jmeter-report/report.csv"
-          sudo touch jmeter -g "jmeter-report/report.csv" -o "jmeter-html"
+          jmeter -n -t "apache-jmeter-5.5/jmx/main.jmx" -l "jmeter-report/report.csv"
+          jmeter -g "jmeter-report/report.csv" -o "jmeter-html"
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
