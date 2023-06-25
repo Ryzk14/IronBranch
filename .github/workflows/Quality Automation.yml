@@ -165,9 +165,9 @@ jobs:
 
       - name: setup jmeter
         run: |
+          sudo chmod a+rwx ./apache-jmeter-5.5/bin
           cd ./apache-jmeter-5.5
           cd bin
-          chmod +X jmeter
           ./jmeter -n -t "apache-jmeter-5.5/jmx/main.jmx" -l "jmeter-report/report.csv"
           ./jmeter -g "jmeter-report/report.csv" -o "jmeter-html"
 
