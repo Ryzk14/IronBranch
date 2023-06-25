@@ -155,7 +155,7 @@ jobs:
 #               git push
   job4:
     name: Setup Jmeter Load Script
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
 
       - name: Checkout code
@@ -165,7 +165,6 @@ jobs:
 
       - name: setup jmeter
         run: |
-          sudo chmod a+rwx ./apache-jmeter-5.5/bin
           cd ./apache-jmeter-5.5
           cd bin
           ./jmeter -n -t "apache-jmeter-5.5/jmx/main.jmx" -l "jmeter-report/report.csv"
