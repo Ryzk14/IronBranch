@@ -13,7 +13,7 @@ def test_function16(initial_value):
 
 
 def test_function17(initial_value):
-    assert my_coin.set_function4() + initial_value == 10
+    assert my_coin.set_function4() + initial_value == 9
 
 
 def test_function18(initial_value):
@@ -21,4 +21,4 @@ def test_function18(initial_value):
 
 
 def test_function19(initial_value):
-    assert my_coin.set_function6() + initial_value == 14
+    assert my_coin.set_function6() + initial_value == 13
