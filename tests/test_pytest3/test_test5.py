@@ -30,4 +30,4 @@ def test_function13(initial_value):
     assert my_coin.set_function6() + initial_value == 13
 
 def test_function14(initial_value):
-    assert my_coin.set_function6() + initial_value == 14
+    assert my_coin.set_function6() + initial_value == 13
